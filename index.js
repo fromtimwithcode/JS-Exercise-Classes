@@ -107,8 +107,6 @@ const honda = new Car({
   odometer: 0
 });
 
-console.log(honda.drive(50));
-
 /*
   TASK 3
     - Write a Lambdasian class.
@@ -183,6 +181,7 @@ class Student extends Lambdasian {
      this.previousBackground = obj.previousBackground;
      this.className = obj.className;
      this.favSubjects = obj.favSubjects;
+     this.grade = Math.ceil(Math.random() * 100);
    }
 
    listSubjects() {
@@ -193,6 +192,13 @@ class Student extends Lambdasian {
    }
    sprintChallenge(subject) {
     return `${this.name} has submitted a PR for ${subject}`;
+   }
+   graduate() {
+     if (this.grade > 70) {
+       return `Congratulations! You have officially graduate from Lambda School!`;
+     } else {
+       return `Keep on studying and you'll graduate in no time!`;
+     }
    }
 }
 
@@ -232,6 +238,13 @@ class ProjectManager extends Instructor {
       + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 */
 
+const stretchTest = new Student({
+  name: 'Tim',
+  age: 32,
+  location: 'Milwaukee'
+});
+
+console.log('Stretch Test: ', stretchTest.graduate());
 
 //End of Challenge
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
